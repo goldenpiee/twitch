@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Звук!</title>
+    <style>
+        /* Это нужно, чтобы страница была пустой и не отвлекала */
+        body { background-color: #18181b; } 
+    </style>
+</head>
+<body>
+    <audio id="myAudio" autoplay>
+        <source src="sound.mpeg" type="audio/mpeg">
+        Ваш браузер не поддерживает воспроизведение аудио.
+    </audio>
+
+    <script>
+        // Дополнительный скрипт для гарантии воспроизведения
+        window.onload = function() {
+            var audio = document.getElementById('myAudio');
+            audio.play();
+
+            // (Опционально) Через 3 секунды можно попытаться закрыть вкладку
+            // Но это может быть заблокировано браузером
+            setTimeout(function(){
+                // window.close(); 
+            }, 3000);
+        };
+    </script>
+</body>
+</html>
